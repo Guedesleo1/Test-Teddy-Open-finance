@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "es2021",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "rootDir": "./",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "skipLibCheck": true,
+        "paths": {
+            "@controllers/*": ["./src/presentation/controllers/*"],
+            "@entities/*": ["./src/domain/entities/*"],
+            "@usecases/*": ["./src/domain/usecases/*"],
+            "@modules/*": ["./src/data/modules/*"],
+            "@main/*": ["./src/main/*"],
+            "@domain/*": ["./src/domain/*"],
+            "@presentation/*": ["./src/presentation/*"],
+            "@infra/*": ["./src/infra/*"],
+            "@data/*": ["./src/data/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}

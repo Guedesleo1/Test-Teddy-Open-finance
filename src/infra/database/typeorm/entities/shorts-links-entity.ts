@@ -1,5 +1,12 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
 
+export interface IShortsLinks {
+  userId?: string
+  url: string
+  urlShorts: string
+  cicksNumber?: number
+}
+
 @Entity({ name: 'shorts_links' })
 export class ShortsLinksEntity {
   @PrimaryGeneratedColumn()
@@ -13,6 +20,9 @@ export class ShortsLinksEntity {
 
   @Column({ name: 'url_shorts', length: 255, nullable: false })
     urlShorts: string;
+
+  @Column({ name: 'clicks_number' })
+    cicksNumber: number;
 
   @CreateDateColumn({ name: 'created_at' })
     createdAt: Date;

@@ -4,7 +4,7 @@ import { dateBaseSource } from '../data-source';
 import { IUserRepository } from 'src/core/interfaces/repositories/users-repository';
 import { UsersEntity } from '../entities/users.entity';
 import { UsersDomain } from '@entities/users-domain';
-import { IReponseUsers } from 'src/core/interfaces/usecases/Icreate-users-usecase';
+import { IReponseUsers } from 'src/core/interfaces/usecases/create-users-usecase';
 
 export class UserRepositoryTypeorm implements IUserRepository {
   private readonly userEntity: Repository<UsersDomain>;

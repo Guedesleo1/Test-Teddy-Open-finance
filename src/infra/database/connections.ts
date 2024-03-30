@@ -1,3 +1,4 @@
+import { ShortsLinksEntity } from './typeorm/entities/shorts-links-entity';
 import { UsersEntity } from './typeorm/entities/users.entity';
 
 export const postgresConnection = {
@@ -7,6 +8,6 @@ export const postgresConnection = {
   username: 'postgres',
   password: 'postgres',
   database: 'teddyOpenFinnace',
-  entities: [UsersEntity],
+  entities: [UsersEntity, ShortsLinksEntity],
   migrations: [`${__dirname}/typeorm/migrations/*.ts`]
 };

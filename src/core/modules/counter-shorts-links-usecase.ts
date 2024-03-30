@@ -16,7 +16,7 @@ export class CounterShortsLinksUseCase implements ICounterShortsLinkUseCase {
   async update (shortCode: string): Promise<Result<any>> {
     const shortLinksExists = await this.shortsLinksRepo.findByUrlShorts(`http://localhost/${shortCode}`);
     if (!shortLinksExists) {
-      return Result.fail('URl shorts not exists');
+      return Result.fail('URL shorts not exists.');
     }
     shortLinksExists.clicksNumber++;
 

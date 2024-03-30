@@ -1,4 +1,4 @@
-import { ICreateUserUseCase } from 'src/core/interfaces/usecases/Icreate-users-usecase';
+import { ICreateUserUseCase } from 'src/core/interfaces/usecases/create-users-usecase';
 import { Response, Controller, HttpRequest, HttpResponse } from '..';
 
 export class CreateUsersController implements Controller {
@@ -19,7 +19,6 @@ export class CreateUsersController implements Controller {
 
       return Response.ok(result);
     } catch (error) {
-      console.log('error', error);
       return Response.serverError();
     }
   }

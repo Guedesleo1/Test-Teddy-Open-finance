@@ -15,4 +15,9 @@ export class Response {
     statusCode: 500,
     body: { error: 'Internal Server Error' }
   });
+
+  static redirect = (url: string): HttpResponse => ({
+    statusCode: 301,
+    headers: { url }
+  });
 }

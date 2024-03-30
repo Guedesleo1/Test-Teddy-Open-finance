@@ -2,7 +2,7 @@ import { Result } from '../helpers/result';
 import { Encrypter } from '../interfaces/adapters/encrypter';
 import { IdGenerator } from '../interfaces/adapters/id-generator';
 import { IUserRepository } from '../interfaces/repositories/users-repository';
-import { ICreateUserUseCase, usersCreateDTO } from '../interfaces/usecases/Icreate-users-usecase';
+import { ICreateUserUseCase, usersCreateDTO } from '../interfaces/usecases/create-users-usecase';
 
 interface CreateUserConstructor {
   userRepo: IUserRepository

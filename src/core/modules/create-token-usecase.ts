@@ -2,7 +2,7 @@ import { Result } from '../helpers/result';
 import { Encrypter } from '../interfaces/adapters/encrypter';
 import { ITokenGenerator } from '../interfaces/adapters/jwt';
 import { IUserRepository } from '../interfaces/repositories/users-repository';
-import { ICreateTokenUseCase, IResponseCreateToken, lokenCreateDTO } from '../interfaces/usecases/Icrate-token-usecase';
+import { ICreateTokenUseCase, IResponseCreateToken, lokenCreateDTO } from '../interfaces/usecases/crate-token-usecase';
 
 export interface CreateTokenConstructor {
   userRepo: IUserRepository

@@ -1,4 +1,4 @@
-import { ICreateTokenUseCase } from 'src/core/interfaces/usecases/Icrate-token-usecase';
+import { ICreateTokenUseCase } from 'src/core/interfaces/usecases/crate-token-usecase';
 import { Response, Controller, HttpRequest, HttpResponse } from '..';
 
 export class CreateTokenController implements Controller {

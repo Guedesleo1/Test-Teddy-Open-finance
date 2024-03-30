@@ -13,6 +13,7 @@
         "strict": true,
         "noImplicitAny": true,
         "skipLibCheck": true,
+        "strictPropertyInitialization": false,
         "paths": {
             "@controllers/*": ["./src/presentation/controllers/*"],
             "@entities/*": ["./src/domain/entities/*"],

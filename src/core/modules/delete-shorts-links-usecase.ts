@@ -1,0 +1,21 @@
+import { Result } from '../helpers/result';
+import { IShortsLinksRepository } from '../interfaces/repositories/shorts-links-repository';
+import { IDeleteShortsLinkUseCase } from '../interfaces/usecases/delete-shorts-links-usecase';
+
+export interface DeleteShortsLinksConstructor {
+  shortsLinksRepo: IShortsLinksRepository
+}
+
+export class DeleteShortsLinksUseCase implements IDeleteShortsLinkUseCase {
+  private readonly shortsLinksRepo: IShortsLinksRepository;
+
+  constructor ({ shortsLinksRepo }: DeleteShortsLinksConstructor) {
+    this.shortsLinksRepo = shortsLinksRepo;
+  }
+
+  async delete (code: string, userId: string): Promise<Result<any>> {
+    const shortLinksExists = await this.shortsLinksRepo.findByUrlShorts(code);
+    await this.shortsLinksRepo.delete(shortLinksExists.id);
+    return Result.ok(userId);
+  }
+}

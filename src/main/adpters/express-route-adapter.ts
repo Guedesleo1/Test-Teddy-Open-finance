@@ -6,11 +6,16 @@ export class ExpressRouteAdapter {
     return async (request: Request, response: Response) => {
       const httpRequest: HttpRequest = {
         body: request.body,
-        request
+        request,
+        params: request.params
       };
       const httpResponse: HttpResponse = await controller.handle(
         httpRequest
       );
+      if (httpResponse.statusCode === 301) {
+        return response.redirect(httpResponse.headers.url);
+      }
+
       return response
         .status(httpResponse.statusCode)
         .json(httpResponse.body);

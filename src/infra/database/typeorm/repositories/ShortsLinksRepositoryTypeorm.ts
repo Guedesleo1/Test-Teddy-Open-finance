@@ -16,8 +16,7 @@ export class ShortsLinksRepositoryTypeorm implements IShortsLinksRepository {
     return {
       userId: shortLinksCreate.userId ?? null,
       url: shortLinksCreate.url,
-      urlShorts: shortLinksCreate.urlShorts,
-      clickQuantity: Number(shortLinksCreate.clicksNumber)
+      urlShorts: shortLinksCreate.urlShorts
     };
   }
 
@@ -40,6 +39,12 @@ export class ShortsLinksRepositoryTypeorm implements IShortsLinksRepository {
       where: {
         deletedAt: IsNull()
       }
+    });
+  }
+
+  async delete (id: number): Promise<void> {
+    await this.shortLinksEntity.update(id, {
+      deletedAt: new Date()
     });
   }
 }

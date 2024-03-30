@@ -5,9 +5,9 @@ export interface IShortsLinks {
   url: string
   urlShorts: string
   clicksNumber?: number
-  createdAt: Date
-  updatedAt: Date
-  deletedAt: Date | FindOperator<Date> | null
+  createdAt?: Date
+  updatedAt?: Date
+  deletedAt?: Date | FindOperator<Date> | null
 }
 
 @Entity({ name: 'shorts_links' })

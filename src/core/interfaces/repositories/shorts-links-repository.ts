@@ -4,7 +4,6 @@ export interface IReponseShortsLinks {
   userId?: string | null
   url: string
   urlShorts: string
-  clickQuantity: number
 }
 
 export interface IShortsLinksRepository {
@@ -13,4 +12,5 @@ export interface IShortsLinksRepository {
   findByUrlShorts: (urlShorts: string) => Promise<any>
   updateCounterClick: (shortLinks: any) => Promise<void>
   list: () => Promise<IShortsLinks[]>
+  delete: (id: number) => Promise<void>
 }

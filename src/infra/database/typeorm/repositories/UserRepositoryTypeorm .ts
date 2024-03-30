@@ -27,4 +27,9 @@ export class UserRepositoryTypeorm implements IUserRepository {
     const userExists = await this.userEntity.findOne({ where: { email } });
     return !!userExists;
   }
+
+  async findByEmail (email: string): Promise<UsersDomain | null> {
+    const userExists = await this.userEntity.findOne({ where: { email } });
+    return userExists;
+  }
 }

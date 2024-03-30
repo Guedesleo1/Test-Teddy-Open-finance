@@ -24,7 +24,6 @@ export class CreateShortsLinkController implements Controller {
 
       return Response.ok(result.getValue());
     } catch (error) {
-      console.log('error', error);
       return Response.serverError();
     }
   }

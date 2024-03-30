@@ -18,7 +18,6 @@ export class CreateShortsLinksUseCase implements ICreateShortsLinksUseCase {
   }
 
   async create (shortsLikns: shortsLinksDTO): Promise<Result<any>> {
-    console.log('shortsLikns.userId,', shortsLikns);
     const userExists = await this.shortsLinksRepo.exists({
       url: shortsLikns.url
     });

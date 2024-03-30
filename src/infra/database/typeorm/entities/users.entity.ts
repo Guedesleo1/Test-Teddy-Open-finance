@@ -1,24 +1,19 @@
-import 'reflect-metadata';
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 
 @Entity({ name: 'users' })
 export class UsersEntity {
-  constructor () {
-    this.createdAt = new Date();
-  }
-
   @PrimaryGeneratedColumn('uuid', { name: 'user_id' })
-    userId!: string;
+    userId: string;
 
   @Column({ name: 'name', length: 100, nullable: false })
-    name!: string;
+    name: string;
 
   @Column({ name: 'email', length: 100, nullable: false, unique: true })
-    email!: string;
+    email: string;
 
   @Column({ name: 'password', length: 250, nullable: false })
-    password!: string;
+    password: string;
 
-  @CreateDateColumn({ name: 'created_at' })
+  @CreateDateColumn({ name: 'created_at', default: () => 'CURRENT_TIMESTAMP' })
     createdAt: Date;
 }

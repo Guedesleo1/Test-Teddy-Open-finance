@@ -3,6 +3,7 @@ import { IsNull, Repository } from 'typeorm';
 import { dateBaseSource } from '../data-source';
 import { IShortsLinks, ShortsLinksEntity } from '../entities/shorts-links-entity';
 import { IReponseShortsLinks, IShortsLinksRepository } from 'src/core/interfaces/repositories/shorts-links-repository';
+import { IUpdateShortsLinkRepositoryDTO } from 'src/core/interfaces/usecases/update-shorts-links-usecase';
 
 export class ShortsLinksRepositoryTypeorm implements IShortsLinksRepository {
   private readonly shortLinksEntity: Repository<IShortsLinks>;
@@ -46,5 +47,20 @@ export class ShortsLinksRepositoryTypeorm implements IShortsLinksRepository {
     await this.shortLinksEntity.update(id, {
       deletedAt: new Date()
     });
+  }
+
+  async update ({ id, userId, url }: IUpdateShortsLinkRepositoryDTO): Promise<any> {
+    await this.shortLinksEntity.update(id, {
+      userId,
+      url
+    });
+
+    const updatedShortsLink = await this.shortLinksEntity.findOne({
+      where: {
+        url
+      }
+    });
+
+    return updatedShortsLink;
   }
 }

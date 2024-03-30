@@ -19,7 +19,6 @@ export class CreateUsersController implements Controller {
 
       return Response.ok(result);
     } catch (error) {
-      console.log('error', error);
       return Response.serverError();
     }
   }

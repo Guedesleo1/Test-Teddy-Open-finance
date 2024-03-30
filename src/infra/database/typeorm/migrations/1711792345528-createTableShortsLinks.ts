@@ -29,8 +29,7 @@ export class CreateTableShortsLinks1711792345528 implements MigrationInterface {
             name: 'user_id',
             type: 'varchar',
             length: '100',
-            isNullable: true,
-            isUnique: true
+            isNullable: true
           },
           {
             name: 'clicks_number',

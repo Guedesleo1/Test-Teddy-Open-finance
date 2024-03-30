@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
 
 export interface IShortsLinks {
-  userId?: string
+  userId?: string | null
   url: string
   urlShorts: string
   cicksNumber?: number

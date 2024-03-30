@@ -10,8 +10,13 @@ export class CreateShortsLinkController implements Controller {
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
+      const { data } = httpRequest.request;
       const bodyShrotsLinks = httpRequest.body;
-      const result = await this.createShortsLinks.create(bodyShrotsLinks);
+
+      const result = await this.createShortsLinks.create({
+        userId: data ? data.userId : undefined,
+        ...bodyShrotsLinks
+      });
 
       if (result.isFailure) {
         return Response.badRequest(result.error);

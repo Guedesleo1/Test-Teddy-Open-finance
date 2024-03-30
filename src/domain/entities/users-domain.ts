@@ -15,8 +15,8 @@ export class UsersDomain {
   static create (userDTO: UsersDomain) {
     return new UsersDomain({
       userId: userDTO.userId,
-      email: userDTO.email.toUpperCase(),
-      name: userDTO.name.toUpperCase(),
+      email: userDTO.email,
+      name: userDTO.name,
       password: userDTO.password
     });
   }

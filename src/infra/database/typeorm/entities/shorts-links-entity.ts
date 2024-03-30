@@ -1,10 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, FindOperator } from 'typeorm';
 
 export interface IShortsLinks {
   userId?: string | null
   url: string
   urlShorts: string
-  cicksNumber?: number
+  clicksNumber?: number
+  createdAt: Date
+  updatedAt: Date
+  deletedAt: Date | FindOperator<Date> | null
 }
 
 @Entity({ name: 'shorts_links' })
@@ -22,7 +25,7 @@ export class ShortsLinksEntity {
     urlShorts: string;
 
   @Column({ name: 'clicks_number' })
-    cicksNumber: number;
+    clicksNumber: number;
 
   @CreateDateColumn({ name: 'created_at' })
     createdAt: Date;

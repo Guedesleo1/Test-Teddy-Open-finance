@@ -5,7 +5,7 @@ interface IPayload {
   data: object
 }
 
-export async function ensureAuthenticated (
+export async function ensureAuthenticatedPulbic (
   request: Request,
   response: Response,
   next: NextFunction

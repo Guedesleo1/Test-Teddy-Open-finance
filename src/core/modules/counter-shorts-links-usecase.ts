@@ -18,7 +18,7 @@ export class CounterShortsLinksUseCase implements ICounterShortsLinkUseCase {
     if (!shortLinksExists) {
       return Result.fail('URl shorts not exists');
     }
-    shortLinksExists.cicksNumber++;
+    shortLinksExists.clicksNumber++;
 
     await this.shortsLinksRepo.updateCounterClick(shortLinksExists);
 

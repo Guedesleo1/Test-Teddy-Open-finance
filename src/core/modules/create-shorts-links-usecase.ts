@@ -28,7 +28,7 @@ export class CreateShortsLinksUseCase implements ICreateShortsLinksUseCase {
     const newShortsLinks = await this.shortsLinksRepo.create({
       userId: shortsLikns.userId,
       url: shortsLikns.url,
-      urlShorts: `http://localhost/${this.shortId.generate()}`
+      urlShorts: `http://localhost:3000/${this.shortId.generate()}`
     });
 
     return Result.ok(newShortsLinks);

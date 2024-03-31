@@ -15,6 +15,9 @@ export class UpdateShortsLinksUseCase implements IUpdateShortsLinkUseCase {
 
   async update ({ code, userId, url }: IUpdateShortsLinkDTO): Promise<Result<any>> {
     const shortLinksExists = await this.shortsLinksRepo.findByUrlShorts(code);
+    if (!shortLinksExists) {
+      return Result.fail('URL shorts not exists.');
+    }
     const reusltShortsLink = await this.shortsLinksRepo.update({
       id: shortLinksExists.id,
       url,

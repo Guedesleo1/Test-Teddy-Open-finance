@@ -15,6 +15,9 @@ export class DeleteShortsLinksUseCase implements IDeleteShortsLinkUseCase {
 
   async delete (code: string): Promise<Result<any>> {
     const shortLinksExists = await this.shortsLinksRepo.findByUrlShorts(code);
+    if (!shortLinksExists) {
+      return Result.fail('URL shorts not exists.');
+    }
     await this.shortsLinksRepo.delete(shortLinksExists.id);
     return Result.ok({ id: shortLinksExists.id });
   }

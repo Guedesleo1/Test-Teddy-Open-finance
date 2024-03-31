@@ -22,7 +22,7 @@ export class CreateShortsLinksUseCase implements ICreateShortsLinksUseCase {
       url: shortsLikns.url
     });
     if (userExists) {
-      return Result.fail('UrL already exists.');
+      return Result.fail('URL already exists.');
     }
 
     const newShortsLinks = await this.shortsLinksRepo.create({

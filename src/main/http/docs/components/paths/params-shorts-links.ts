@@ -1,73 +1,4 @@
 export default {
-  post: {
-    tags: [
-      'Shorts Links'
-    ],
-    summary: 'Post Counter Shorts Links',
-    description: 'Post Counter Shorts Links',
-    parameters: [
-      {
-        name: 'code',
-        in: 'path',
-        description: 'ID of short Links to deltete',
-        required: true,
-        schema: {
-          type: 'string'
-        }
-
-      }
-    ],
-    responses: {
-      400: {
-        content: {
-          'application/json': {
-            schema: {
-              type: 'object',
-              properties: {
-                error: {
-                  type: 'string',
-                  example: 'URL shorts not exists'
-                }
-              }
-            }
-          }
-        }
-
-      },
-      401: {
-        content: {
-          'application/json': {
-            schema: {
-              type: 'object',
-              properties: {
-                error: {
-                  type: 'string',
-                  example: 'Invalid token.'
-                }
-              }
-            }
-          }
-        }
-
-      },
-      500: {
-        content: {
-          'application/json': {
-            schema: {
-              type: 'object',
-              properties: {
-                error: {
-                  type: 'string',
-                  example: 'Internal server error.'
-                }
-              }
-            }
-          }
-        }
-
-      }
-    }
-  },
   put: {
     tags: [
       'Shorts Links'
@@ -78,7 +9,7 @@ export default {
       {
         name: 'code',
         in: 'path',
-        description: 'ID of short Links to deltete',
+        description: 'ID of short Links to delete',
         required: true,
         schema: {
           type: 'string'
@@ -163,7 +94,7 @@ export default {
       {
         name: 'code',
         in: 'path',
-        description: 'ID of short Links to deltete',
+        description: 'ID of short Links to delete',
         required: true,
         schema: {
           type: 'string'

@@ -11,8 +11,7 @@ export class DeleteShortsLinkController implements Controller {
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const { code } = httpRequest.params;
-      const { data } = httpRequest.request;
-      const result = await this.deleteShortsLinks.delete(`http://localhost/${code}`, data.userId);
+      const result = await this.deleteShortsLinks.delete(`http://localhost/${code}`);
 
       return Response.ok(result.getValue());
     } catch (error) {

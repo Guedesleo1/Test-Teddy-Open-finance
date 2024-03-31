@@ -1,6 +1,5 @@
 import { ExpressRouteAdapter } from '@main/adpters/express-route-adapter';
 import { CreateShortsLinkFactory } from '@main/factories/create-shorts-link-factory';
-import { CounterShortsLinkFactory } from '@main/factories/counter-shorts-link-factory';
 import { Router } from 'express';
 import { ensureAuthenticatedPrivate } from '../config/ensureAuthenticatedPrivate';
 import { JoiAdapter } from '@main/adpters/joi-adapter';
@@ -13,8 +12,6 @@ import { UpdateShortsLinkFactory } from '@main/factories/update-shorts-links-fac
 const shortsLinksRouter = Router();
 
 shortsLinksRouter.post('/links', ensureAuthenticatedPulbic, JoiAdapter.adapt(shortsLinksSchemas), ExpressRouteAdapter.adapt(CreateShortsLinkFactory.register()));
-
-shortsLinksRouter.post('/:code', ExpressRouteAdapter.adapt(CounterShortsLinkFactory.register()));
 
 shortsLinksRouter.get('/', ensureAuthenticatedPrivate, ExpressRouteAdapter.adapt(ListShortsLinkFactory.register()));
 

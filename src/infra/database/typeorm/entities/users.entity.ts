@@ -2,6 +2,10 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 
 @Entity({ name: 'users' })
 export class UsersEntity {
+  constructor () {
+    this.createdAt = new Date();
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'user_id' })
     userId: string;
 
@@ -14,6 +18,6 @@ export class UsersEntity {
   @Column({ name: 'password', length: 250, nullable: false })
     password: string;
 
-  @CreateDateColumn({ name: 'created_at', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn({ name: 'created_at' })
     createdAt: Date;
 }

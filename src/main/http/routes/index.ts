@@ -5,7 +5,7 @@ import { counterShortsLinksRouter } from './counter-shrots-links-routes';
 
 const routes = Router();
 routes.use('/users', userRouter);
-routes.use('/', shortsLinksRouter);
+routes.use('/shorts', shortsLinksRouter);
 routes.use('/', counterShortsLinksRouter);
 
 export { routes };

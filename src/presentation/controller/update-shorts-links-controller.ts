@@ -15,7 +15,7 @@ export class UpdateShortsLinksController implements Controller {
       const { data } = httpRequest.request;
 
       const result = await this.updateShortLinks.update({
-        code: `http://localhost/${code}`,
+        code: `http://localhost:3000/${code}`,
         userId: data.userId,
         url: bodyShorts.url
       });

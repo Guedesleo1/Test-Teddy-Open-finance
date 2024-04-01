@@ -6,7 +6,7 @@ Test-Teddy-Open-finance
 
     docker-compose up -d
 
-o docker-compose vai criar um container de um MySQL e você poderá acessar via localhost:3306 e a senha do usuário **postgres** é **postgres**
+o docker-compose vai criar um container de um test-teddy-open-finance e você poderá acessar via localhost:5432 e a senha do usuário **postgres** é **postgres**
 
 ### Antes de Iniciar o servidor executar o seguinte comando:
     - npm i ou yarn add
